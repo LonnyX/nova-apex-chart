@@ -5,7 +5,7 @@
 
             <HelpTextTooltip v-if="helpText" :text="helpText" :width="helpWidth" />
 
-            <div class="ml-auto w-[16rem] flex-shrink-0">
+            <div v-if="!disableDate" class="ml-auto w-[16rem] flex-shrink-0">
                 <litepie-datepicker :placeholder="datePlaceHolder || '-'" :formatter="dateFormatter" separator=" - " v-model="dateValue">
                 </litepie-datepicker>
             </div>
@@ -66,6 +66,7 @@ export default {
         helpText: {},
         helpWidth: {},
         maxWidth: {},
+        disableDate: false,
     },
 
     methods: {
@@ -100,6 +101,7 @@ export default {
             if (!this.options) {
                 return;
             }
+            console.log(this.chartHeight + '/' + this.chartWidth + '/' + this.series);
             const options = this.options
             this.handleFormatter(options)
             return options

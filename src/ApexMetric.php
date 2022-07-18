@@ -55,6 +55,11 @@ class ApexMetric extends Metric
         return $this->withMeta([ 'chartHeight' => $type ]);
     }
 
+    public function disableDate(bool $disabled = true): self
+    {
+        return $this->withMeta([ 'disableDate' => $disabled ]);
+    }
+
     public function options(array $options): self
     {
         return $this->withMeta([ 'options' => (object) $options ]);

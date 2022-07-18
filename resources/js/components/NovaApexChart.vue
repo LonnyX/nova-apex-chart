@@ -1,8 +1,10 @@
 <template>
     <BaseNovaApexChart
         @selected="handleSelected"
-        :width="chartWidth"
-        :height="chartHeight"
+        :chartWidth="chartWidth"
+        :chartHeight="chartHeight"
+        :height="height"
+        :width="width"
         :chartType="chartType"
         :series="series"
         :options="options"
@@ -10,6 +12,7 @@
         :help-text="helpText"
         :help-width="helpWidth"
         :datePlaceHolder="datePlaceHolder"
+        :disableDate="disableDate"
         :loading="loading" />
 </template>
 
@@ -64,7 +67,6 @@ export default {
     methods: {
         handleSelected(dateValue) {
             this.selectedDateValue = {...dateValue};
-            console.log('handleSelected', this.selectedDateValue);
             this.fetch();
         },
         fetch() {
@@ -81,6 +83,7 @@ export default {
                             width,
                             height,
                             datePlaceHolder,
+                            disableDate,
                         },
                     },
                 }) => {
@@ -92,6 +95,7 @@ export default {
                     this.width = width;
                     this.height = height;
                     this.datePlaceHolder = datePlaceHolder;
+                    this.disableDate = disableDate || false;
                     this.loading = false;
                 }
             )
