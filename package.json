@@ -1,0 +1,25 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production",
+        "nova:install": "npm --prefix='../../vendor/laravel/nova' ci"
+    },
+    "devDependencies": {
+        "@vue/compiler-sfc": "^3.2.22",
+        "laravel-mix": "^6.0.41",
+        "postcss": "^8.3.11",
+        "vue-loader": "^16.8.3"
+    },
+    "dependencies": {
+        "apexcharts": "^3.10.1",
+        "comma-number": "^2.0.1",
+        "litepie-datepicker": "^1.0.14",
+        "vue3-apexcharts": "^1.4.1"
+    }
+}

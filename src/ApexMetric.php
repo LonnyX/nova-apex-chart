@@ -1,0 +1,62 @@
+<?php
+
+namespace LonnyX\NovaApexChart;
+
+use Laravel\Nova\Metrics\Metric;
+
+class ApexMetric extends Metric
+{
+    /**
+     * The width of the card (1/3, 1/2, or full).
+     *
+     * @var string
+     */
+    public $width = 'full';
+
+    public function __construct($component = null)
+    {
+        parent::__construct($component);
+
+        $this->withMeta([
+            'options' => (object) [],
+            'type' => 'bar',
+            'chartWidth' => '100%',
+            'chartHeight' => 'auto',
+        ]);
+    }
+
+    /**
+     * Get the component name for the element.
+     *
+     * @return string
+     */
+    public function component()
+    {
+        return 'nova-apex-chart';
+    }
+
+    public function series(array $series): self
+    {
+        return $this->withMeta([ 'series' => $series ]);
+    }
+
+    public function type(string $type): self
+    {
+        return $this->withMeta([ 'type' => $type ]);
+    }
+
+    public function chartWidth(string $width): self
+    {
+        return $this->withMeta([ 'chartWidth' => $width ]);
+    }
+
+    public function chartHeight(string $type): self
+    {
+        return $this->withMeta([ 'chartHeight' => $type ]);
+    }
+
+    public function options(array $options): self
+    {
+        return $this->withMeta([ 'options' => (object) $options ]);
+    }
+}
