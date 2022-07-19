@@ -79,4 +79,4 @@ new BasicFormatter('', '', true);
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://raw.githubusercontent.com/lonnyx/nova-slider-filter/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://raw.githubusercontent.com/lonnyx/nova-apex-chart/master/LICENSE) for more information.
