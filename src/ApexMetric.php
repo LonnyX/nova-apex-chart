@@ -3,6 +3,7 @@
 namespace LonnyX\NovaApexChart;
 
 use Laravel\Nova\Metrics\Metric;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class ApexMetric extends Metric
 {
@@ -63,5 +64,24 @@ class ApexMetric extends Metric
     public function options(array $options): self
     {
         return $this->withMeta([ 'options' => (object) $options ]);
+    }
+
+    /**
+     * Get the appropriate cache key for the metric.
+     *
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
+     * @return string
+     */
+    protected function getCacheKey(NovaRequest $request)
+    {
+        return sprintf(
+            'nova.metric.%s.%s.%s.%s.%s.%s',
+            $this->uriKey(),
+            $request->input('startDate', 'no-startDate'),
+            $request->input('endDate', 'no-endDate'),
+            $request->input('timezone', 'no-timezone'),
+            $this->onlyOnDetail ? $request->findModelOrFail()->getKey() : 'no-resource-id',
+            md5($request->input('filter', 'no-filter'))
+        );
     }
 }

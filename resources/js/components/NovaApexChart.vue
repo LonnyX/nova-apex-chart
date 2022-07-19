@@ -13,6 +13,7 @@
         :help-width="helpWidth"
         :datePlaceHolder="datePlaceHolder"
         :disableDate="disableDate"
+        :singleDate="singleDate"
         :loading="loading" />
 </template>
 
@@ -84,6 +85,7 @@ export default {
                             height,
                             datePlaceHolder,
                             disableDate,
+                            singleDate,
                         },
                     },
                 }) => {
@@ -96,6 +98,7 @@ export default {
                     this.height = height;
                     this.datePlaceHolder = datePlaceHolder;
                     this.disableDate = disableDate || false;
+                    this.singleDate = singleDate || false;
                     this.loading = false;
                 }
             )
