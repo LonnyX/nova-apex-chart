@@ -10,7 +10,8 @@ This package is a fork of `dcasia/nova-apex-chart`, compatible with Nova 4 and w
 
 [ApexCharts Documentation](https://apexcharts.com/docs/series/#)
 
-![SliderFilter in Action](https://raw.githubusercontent.com/lonnyx/nova-apex-chart/master/screenshot.png)
+![LineCharts in Action](https://raw.githubusercontent.com/lonnyx/nova-apex-chart/master/screenshot1.png)
+![LineCharts DateFilter](https://raw.githubusercontent.com/lonnyx/nova-apex-chart/master/screenshot2.png)
 
 # Installation
 
