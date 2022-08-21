@@ -72,7 +72,7 @@ class ApexMetric extends Metric
      * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return string
      */
-    protected function getCacheKey(NovaRequest $request)
+    public function getCacheKey(NovaRequest $request)
     {
         return sprintf(
             'nova.metric.%s.%s.%s.%s.%s.%s',
